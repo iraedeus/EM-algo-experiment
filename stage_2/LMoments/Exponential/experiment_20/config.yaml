@@ -9,6 +9,6 @@ distributions:
 init_distributions:
 - type: Exponential
   params:
-  - 1.0
+  - 0.33087023958119943
   prior: 1.0
 error: false

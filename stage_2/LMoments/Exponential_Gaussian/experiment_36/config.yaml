@@ -14,11 +14,11 @@ distributions:
 init_distributions:
 - type: Exponential
   params:
-  - 1.0
+  - 4.980994763176474
   prior: 0.5
 - type: Gaussian
   params:
-  - 0.0
-  - 1.0
+  - 0.2911434509913704
+  - 4.858284050306729
   prior: 0.5
 error: false

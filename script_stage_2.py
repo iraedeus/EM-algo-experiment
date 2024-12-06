@@ -26,13 +26,13 @@ parser = SamplesDatasetParser()
 datasets = parser.parse(SOURCE_DIR)
 
 # Execute stage 2
-executor = StandartExperimentExecutor(WORKING_DIR, 42)
+executor = RandomExperimentExecutor(WORKING_DIR, 42)
 executor.execute(
     datasets,
     LMomentsEstimator(StepCountBreakpointer(), FiniteChecker()),
 )
 
-executor = StandartExperimentExecutor(WORKING_DIR, 42)
+executor = RandomExperimentExecutor(WORKING_DIR, 42)
 executor.execute(
     datasets,
     LikelihoodEstimator(

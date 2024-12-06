@@ -10,7 +10,7 @@ distributions:
 init_distributions:
 - type: Gaussian
   params:
-  - 0.0
-  - 1.0
+  - 1.356844442644002
+  - 1.887677676953413
   prior: 1.0
 error: false

@@ -15,12 +15,12 @@ distributions:
 init_distributions:
 - type: WeibullExp
   params:
-  - 1.0
-  - 1.5
+  - 1.32269572219233
+  - 0.6036887461917496
   prior: 0.5
 - type: Gaussian
   params:
-  - 0.0
-  - 1.0
+  - 2.8011624187144264
+  - 4.432260037109944
   prior: 0.5
 error: false
