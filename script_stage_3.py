@@ -9,6 +9,7 @@ from experimental_env.analysis.analyze_strategies.time_plot import TimePlot
 from experimental_env.analysis.analyze_summarizers.error_summarizer import (
     ErrorSummarizer,
 )
+from experimental_env.analysis.analyze_summarizers.time_summarizer import TimeSummarizer
 from experimental_env.analysis.metrics import SquaredError
 from experimental_env.experiment.experiment_parser import ExperimentParser
 
@@ -30,7 +31,7 @@ results_1 = ExperimentParser().parse(LMOMENTS_DIR)
 results_2 = ExperimentParser().parse(LIKELIHOOD_DIR)
 
 analyze_actions = [DensityPlot(), TimePlot(), ErrorConvergence(SquaredError())]
-analyze_summarizers = [ErrorSummarizer(SquaredError())]
+analyze_summarizers = [ErrorSummarizer(SquaredError()), TimeSummarizer()]
 
 Analysis(WORKING_DIR, analyze_actions, analyze_summarizers).analyze(results_1, "LM-EM")
 Analysis(WORKING_DIR, analyze_actions, analyze_summarizers).analyze(results_2, "MLE-EM")
