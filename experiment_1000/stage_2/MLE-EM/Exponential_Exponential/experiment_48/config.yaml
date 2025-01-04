@@ -1,0 +1,22 @@
+name: Exponential_Exponential
+samples_size: 1000
+exp_num: 48
+distributions:
+- type: Exponential
+  params:
+  - 2.550381727496155
+  prior: 0.28744944533503486
+- type: Exponential
+  params:
+  - 0.3219864270886662
+  prior: 0.7125505546649651
+init_distributions:
+- type: Exponential
+  params:
+  - 2.850703857399439
+  prior: 0.5
+- type: Exponential
+  params:
+  - 1.387433881762383
+  prior: 0.5
+error: false

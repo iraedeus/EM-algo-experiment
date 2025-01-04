@@ -1,0 +1,16 @@
+name: WeibullExp
+samples_size: 1000
+exp_num: 42
+distributions:
+- type: WeibullExp
+  params:
+  - 1.6154948448224011
+  - 2.1011252522341626
+  prior: 1.0
+init_distributions:
+- type: WeibullExp
+  params:
+  - 4.312213461243358
+  - 0.44720101445440186
+  prior: 1.0
+error: false

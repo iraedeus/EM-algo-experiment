@@ -1,0 +1,8 @@
+name: Exponential
+samples_size: 1000
+exp_num: 61
+distributions:
+- type: Exponential
+  params:
+  - 4.948664418119317
+  prior: 1.0
