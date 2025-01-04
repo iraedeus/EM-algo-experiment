@@ -1,0 +1,26 @@
+name: WeibullExp_Gaussian
+samples_size: 200
+exp_num: 96
+distributions:
+- type: WeibullExp
+  params:
+  - 2.6148165896672624
+  - 1.4923526383091736
+  prior: 0.5024998207060545
+- type: Gaussian
+  params:
+  - 1.488422140495369
+  - 1.0721850093490355
+  prior: 0.49750017929394547
+init_distributions:
+- type: WeibullExp
+  params:
+  - 4.8644357586154925
+  - 4.047333824819361
+  prior: 0.5
+- type: Gaussian
+  params:
+  - 1.715107559429569
+  - 3.529118915453805
+  prior: 0.5
+error: false

@@ -1,0 +1,24 @@
+name: Exponential_Gaussian
+samples_size: 200
+exp_num: 85
+distributions:
+- type: Exponential
+  params:
+  - 2.1934195898503908
+  prior: 0.28674147893521157
+- type: Gaussian
+  params:
+  - -0.7761119250016781
+  - 1.4044925233672998
+  prior: 0.7132585210647885
+init_distributions:
+- type: Exponential
+  params:
+  - 0.7053377290632983
+  prior: 0.5
+- type: Gaussian
+  params:
+  - 4.697335080071705
+  - 0.6426045828847579
+  prior: 0.5
+error: false

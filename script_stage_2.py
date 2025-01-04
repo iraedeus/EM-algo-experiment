@@ -1,6 +1,8 @@
 import random
 from pathlib import Path
 
+import numpy as np
+
 from experimental_env.experiment.estimators import (
     LikelihoodEstimator,
     LMomentsEstimator,
@@ -21,21 +23,27 @@ from mpest.em.distribution_checkers import (
 SOURCE_DIR = Path("/home/danil/PycharmProjects/Projects/EM-algo-DT/experiment/stage_1")
 WORKING_DIR = Path("/home/danil/PycharmProjects/Projects/EM-algo-DT/experiment/stage_2")
 
+np.random.seed(42)
+
 # Parse stage 1
 parser = SamplesDatasetParser()
 datasets = parser.parse(SOURCE_DIR)
 
 # Execute stage 2
-executor = RandomExperimentExecutor(WORKING_DIR, 42)
+executor = RandomExperimentExecutor(WORKING_DIR, 5)
 executor.execute(
     datasets,
-    LMomentsEstimator(StepCountBreakpointer(), FiniteChecker()),
+    LMomentsEstimator(
+        StepCountBreakpointer(max_step=16),
+        FiniteChecker() + PriorProbabilityThresholdChecker(),
+    ),
 )
 
-executor = RandomExperimentExecutor(WORKING_DIR, 42)
+executor = RandomExperimentExecutor(WORKING_DIR, 5)
 executor.execute(
     datasets,
     LikelihoodEstimator(
-        StepCountBreakpointer(), FiniteChecker() + PriorProbabilityThresholdChecker()
+        StepCountBreakpointer(max_step=16),
+        FiniteChecker() + PriorProbabilityThresholdChecker(),
     ),
 )
